@@ -1,0 +1,23 @@
+
+
+{% extends 'base.html' %}
+{% block body %}
+<!--  <a href="{% url 'add' %}" class='btn btn-primary' style="float:right;"> ADD</a>-->
+<div class="container">
+    <div class="row" style="padding-top:3%;">
+{% for i in a %}
+        <div class="col-md-3">
+<div class="card" style="width: 16rem;">
+  <img class="card-img-top" src="{{i.image.url}}" style="height:200px;width:auto" alt="Card image cap">
+  <div class="card-body">
+    <a href="{% url 'save' i.id %}" class="card-title">{{i.name}}</a>
+
+<!--Some quick example text to build on the card title and make up the bulk of the card's content.</p>&ndash;&gt;-->
+  </div>
+</div>
+</div>
+{% endfor %}
+        </div>
+</div>
+
+{% endblock %}
